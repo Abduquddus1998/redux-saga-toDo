@@ -6,17 +6,17 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 let AddToDo = ({ dispatch }) => {
-  let input;
+  let input = React.createRef();
 
   return (
     <Form
       onSubmit={e => {
         e.preventDefault();
-        if (!input.value.trim()) {
+        /*if (!input.value.trim()) {
           return;
-        }
-        dispatch(addToDo(input.value));
-        input.value = '';
+        }*/
+        dispatch(addToDo(input.current.value));
+        input.current.value = '';
       }}
     >
       <Form.Group controlId="formBasicEmail">
@@ -24,9 +24,7 @@ let AddToDo = ({ dispatch }) => {
           <Form.Control
             type="text"
             placeholder="Enter an item"
-            ref={node => {
-              input = node;
-            }}
+            ref={input}
           />
           <InputGroup.Append>
             <Button type="submit">Add To-Do</Button>
@@ -36,6 +34,8 @@ let AddToDo = ({ dispatch }) => {
     </Form>
   );
 };
+
+
 AddToDo = connect()(AddToDo);
 
 export default AddToDo;
