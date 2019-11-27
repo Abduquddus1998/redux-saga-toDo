@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import AddToDo from './containers/AddToDo';
 //import ToDoListContainer from './containers/ToDoListContainer';
-import ToDoList from './components/ToDoList';
+import ToDoList from "./components/ToDoList"
 
 class App extends Component {
   render() {

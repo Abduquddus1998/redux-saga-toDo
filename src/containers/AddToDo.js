@@ -12,9 +12,9 @@ let AddToDo = ({ dispatch }) => {
     <Form
       onSubmit={e => {
         e.preventDefault();
-        /*if (!input.value.trim()) {
+        if (!input.current.value.trim()) {
           return;
-        }*/
+        }
         dispatch(addToDo(input.current.value));
         input.current.value = '';
       }}
